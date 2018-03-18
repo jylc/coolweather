@@ -15,22 +15,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.coolweather.R;
-
 import org.litepal.crud.DataSupport;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import db.City;
-import db.County;
-import db.Province;
+import com.example.coolweather.db.City;
+import com.example.coolweather.db.County;
+import com.example.coolweather.db.Province;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-import util.HttpUtil;
-import util.Utility;
+import com.example.coolweather.util.HttpUtil;
+import com.example.coolweather.util.Utility;
 
 /**
  * Created by wxb on 2018/3/17.
@@ -79,16 +77,7 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
-                }else if(currentLevel ==LEVEL_COUNTY){
-                    String weatherId = countyList.get(position).getWeatherId();
-                    Intent intent = new Intent(getActivity(),WeatherActivity.class);
-                    intent.putExtra("weather_id",weatherId);
-                    startActivity(intent);
-                    getActivity().finish();
-                }
-
-
-                /*else if (currentLevel == LEVEL_COUNTY) {
+                }else if (currentLevel == LEVEL_COUNTY) {
                     String weatherId = countyList.get(position).getWeatherId();
                     if (getActivity() instanceof MainActivity) {
                         Intent intent = new Intent(getActivity(), WeatherActivity.class);
@@ -98,10 +87,15 @@ public class ChooseAreaFragment extends Fragment {
                     } else if (getActivity() instanceof WeatherActivity) {
                         WeatherActivity activity = (WeatherActivity) getActivity();
                         activity.drawerLayout.closeDrawers();
-                        activity.swipeRefresh.setRefreshing(true);
+                        activity.swipeRefreshLayout.setRefreshing(true);
                         activity.requestWeather(weatherId);
                     }
-                }*/
+                }
+
+
+
+
+
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {

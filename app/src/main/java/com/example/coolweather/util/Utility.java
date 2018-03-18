@@ -1,4 +1,4 @@
-package util;
+package com.example.coolweather.util;
 
 import android.text.TextUtils;
 
@@ -8,10 +8,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import db.City;
-import db.County;
-import db.Province;
-import gson.Weather;
+import com.example.coolweather.db.City;
+import com.example.coolweather.db.County;
+import com.example.coolweather.db.Province;
+import com.example.coolweather.gson.Weather;
 
 /**
  * Created by wxb on 2018/3/16.
