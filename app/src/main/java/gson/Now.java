@@ -12,7 +12,7 @@ public class Now {
     public String temperature;
 
     @SerializedName("cond")
-    public More moew;
+    public More more;
 
     public class More{
         @SerializedName("txt")
